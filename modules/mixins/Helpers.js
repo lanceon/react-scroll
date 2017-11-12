@@ -6,7 +6,6 @@ const ReactDOM = require('react-dom');
 const utils = require('./utils');
 const scrollSpy = require('./scroll-spy');
 const defaultScroller = require('./scroller');
-const assign = require('object-assign');
 const PropTypes = require('prop-types');
 const scrollHash = require('./scroll-hash');
 
@@ -128,7 +127,7 @@ const Helpers = {
 
           return scrollSpy.updateStates();
         }
-        
+
         if(isInside && activeLink !== to) {
           scroller.setActiveLink(to);
 
@@ -152,7 +151,7 @@ const Helpers = {
 
         if(container && container.nodeType) {
           return container;
-        } 
+        }
 
         return utils.getScrollParent(ReactDOM.findDOMNode(this));
       }
@@ -194,7 +193,7 @@ const Helpers = {
           className = this.props.className;
         }
 
-        var props = assign({}, this.props);
+        var props = Object.assign({}, this.props);
 
         for(var prop in protoTypes) {
           if(props.hasOwnProperty(prop)) {
@@ -210,7 +209,7 @@ const Helpers = {
     };
 
     Scroll.propTypes = protoTypes;
-    
+
     Scroll.defaultProps={offset: 0};
 
     return Scroll;

@@ -1,4 +1,3 @@
-const assign = require('object-assign');
 const utils = require('./utils');
 const smooth = require('./smooth');
 const cancelEvents = require('./cancel-events');
@@ -178,7 +177,7 @@ const proceedOptions = (options) => {
   if (options && options.nodeType) {
     options = { element: options };
   } else {
-    options = assign({}, options);
+    options = Object.assign({}, options);
   }
   options.absolute = true;
 

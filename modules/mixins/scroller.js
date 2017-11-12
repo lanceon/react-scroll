@@ -1,5 +1,3 @@
-const assign = require('object-assign');
-
 const utils = require('./utils');
 const animateScroll = require('./animate-scroll');
 const events = require('./scroll-events');
@@ -36,7 +34,7 @@ module.exports = {
         return;
       }
 
-      props = assign({}, props, { absolute : false });
+      props = Object.assign({}, props, { absolute : false });
 
       let containerId = props.containerId;
       let container = props.container;
